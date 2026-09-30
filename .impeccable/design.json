@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30T12:00:00Z",
+  "title": "Design System: Quintal da Fazenda",
+  "extensions": {
+    "colorMeta": {
+      "ouro": { "role": "primary", "displayName": "Logo Gold", "canonical": "#c9ab6e", "tonalRamp": ["#2e2615", "#4f4125", "#735f37", "#9c8150", "#c9ab6e", "#dcc393", "#e9d9b8", "#f5eddc"] },
+      "ouro-claro": { "role": "primary", "displayName": "Pale Gold", "canonical": "#dcc393", "tonalRamp": ["#2e2615", "#4f4125", "#735f37", "#9c8150", "#c9ab6e", "#dcc393", "#e9d9b8", "#f5eddc"] },
+      "ouro-escuro": { "role": "primary", "displayName": "Burnt Gold", "canonical": "#9c8150", "tonalRamp": ["#2e2615", "#4f4125", "#735f37", "#9c8150", "#c9ab6e", "#dcc393", "#e9d9b8", "#f5eddc"] },
+      "campo-claro": { "role": "secondary", "displayName": "Field Green", "canonical": "#9cba84", "tonalRamp": ["#15250f", "#23401b", "#325c28", "#3f7a35", "#6e9a5c", "#9cba84", "#c3d6b3", "#e6efdf"] },
+      "mato-950": { "role": "neutral", "displayName": "Night Bush", "canonical": "#141b12", "tonalRamp": ["#141b12", "#1a2318", "#202b1d", "#2a3826", "#374733", "#56664f", "#8a9884", "#c7cfc2"] },
+      "mato-900": { "role": "neutral", "displayName": "Deep Bush", "canonical": "#1a2318", "tonalRamp": ["#141b12", "#1a2318", "#202b1d", "#2a3826", "#374733", "#56664f", "#8a9884", "#c7cfc2"] },
+      "mato": { "role": "neutral", "displayName": "Bush Green", "canonical": "#202b1d", "tonalRamp": ["#141b12", "#1a2318", "#202b1d", "#2a3826", "#374733", "#56664f", "#8a9884", "#c7cfc2"] },
+      "mato-700": { "role": "neutral", "displayName": "Moss", "canonical": "#2a3826", "tonalRamp": ["#141b12", "#1a2318", "#202b1d", "#2a3826", "#374733", "#56664f", "#8a9884", "#c7cfc2"] },
+      "mato-600": { "role": "neutral", "displayName": "Lichen", "canonical": "#374733", "tonalRamp": ["#141b12", "#1a2318", "#202b1d", "#2a3826", "#374733", "#56664f", "#8a9884", "#c7cfc2"] },
+      "creme": { "role": "neutral", "displayName": "Logo Cream", "canonical": "#efe3cf", "tonalRamp": ["#2b271f", "#4d463a", "#736a59", "#a99f8a", "#cfc3ab", "#efe3cf", "#f5ede0", "#faf6ef"] },
+      "creme-dim": { "role": "neutral", "displayName": "Aged Cream", "canonical": "#cfc3ab", "tonalRamp": ["#2b271f", "#4d463a", "#736a59", "#a99f8a", "#cfc3ab", "#efe3cf", "#f5ede0", "#faf6ef"] },
+      "creme-mute": { "role": "neutral", "displayName": "Faded Cream", "canonical": "#a99f8a", "tonalRamp": ["#2b271f", "#4d463a", "#736a59", "#a99f8a", "#cfc3ab", "#efe3cf", "#f5ede0", "#faf6ef"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero slogan only; Ultra uppercase wood-type." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles, uppercase, with one phrase optionally in gold." },
+      "title": { "displayName": "Title", "purpose": "Menu category names inside a gold rule, event titles, docket step headings." },
+      "item": { "displayName": "Item", "purpose": "Dish names; the slab also carries tabs, chips and buttons." },
+      "price": { "displayName": "Price", "purpose": "Prices on butcher tags; tabular lining numerals for all prices, times, dates." },
+      "body": { "displayName": "Body", "purpose": "Reading copy, 34-52ch." },
+      "label": { "displayName": "Label", "purpose": "Uppercase tracked slab for definition terms, legends, docket row labels, ticket month." }
+    },
+    "shadows": [
+      { "name": "arch-hairline", "value": "inset 0 0 0 1px #c9ab6e", "purpose": "Not elevation: draws the 1px gold line that follows the arch radius." },
+      { "name": "field-focus-ring", "value": "0 0 0 2px #9c8150", "purpose": "Not elevation: focus ring on cream fields." }
+    ],
+    "motion": [
+      { "name": "duration-default", "value": "180ms", "purpose": "Default transition duration; buttons, chips and tabs use 150ms colour-only transitions." },
+      { "name": "reduced-motion", "value": "1ms", "purpose": "All transitions and animations collapse under prefers-reduced-motion; smooth scroll disabled." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Gold Button",
+      "kind": "button",
+      "refersTo": "button-ouro",
+      "description": "Primary action on green; one per view.",
+      "html": "<button class=\"ds-btn-ouro\">Reservar e pré-pedir</button>",
+      "css": ".ds-btn-ouro { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 28px; border: 0; border-radius: 2px; background: #c9ab6e; color: #141b12; font-family: 'Zilla Slab', Georgia, serif; font-size: 1.0625rem; font-weight: 600; cursor: pointer; transition: background-color 150ms; } .ds-btn-ouro:hover { background: #dcc393; } .ds-btn-ouro:active { background: #9c8150; } .ds-btn-ouro:focus-visible { outline: 2px solid #dcc393; outline-offset: 3px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-linha",
+      "description": "Secondary action on green: gold hairline border, cream text.",
+      "html": "<button class=\"ds-btn-linha\">Ver a carta</button>",
+      "css": ".ds-btn-linha { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 0 28px; border: 1px solid rgb(201 171 110 / 0.7); border-radius: 2px; background: transparent; color: #efe3cf; font-family: 'Zilla Slab', Georgia, serif; font-size: 1.0625rem; font-weight: 600; cursor: pointer; transition: background-color 150ms, border-color 150ms; } .ds-btn-linha:hover { border-color: #c9ab6e; background: rgb(201 171 110 / 0.1); } .ds-btn-linha:focus-visible { outline: 2px solid #dcc393; outline-offset: 3px; }"
+    },
+    {
+      "name": "Dark Button (on paper)",
+      "kind": "button",
+      "refersTo": "button-creme",
+      "description": "Primary action on the cream docket.",
+      "html": "<div style=\"background:#efe3cf;padding:16px\"><button class=\"ds-btn-creme\">Continuar</button></div>",
+      "css": ".ds-btn-creme { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 32px; border: 0; border-radius: 2px; background: #141b12; color: #efe3cf; font-family: 'Zilla Slab', Georgia, serif; font-size: 1.0625rem; font-weight: 600; cursor: pointer; transition: background-color 150ms; } .ds-btn-creme:hover { background: #2a3826; } .ds-btn-creme:focus-visible { outline: 2px solid #9c8150; outline-offset: 3px; }"
+    },
+    {
+      "name": "Butcher Price Tag",
+      "kind": "custom",
+      "refersTo": "etiqueta",
+      "description": "Cream tag with pointed end, punched hole and 1px gold string; carries every price.",
+      "html": "<div class=\"ds-wrap\"><span class=\"ds-cordel\"><span class=\"ds-etiqueta\">16.000 Kz</span></span> <span class=\"ds-cordel\"><span class=\"ds-etiqueta ds-esgotado\">9.500 Kz</span></span></div>",
+      "css": ".ds-wrap { background: #202b1d; padding: 24px 32px; display: flex; gap: 40px; } .ds-cordel { position: relative; display: inline-block; } .ds-cordel::before { content: ''; position: absolute; right: calc(100% - 13px); top: 50%; width: 22px; height: 1px; background: #c9ab6e; transform: rotate(-24deg); transform-origin: right center; } .ds-etiqueta { position: relative; display: inline-flex; align-items: center; min-height: 34px; padding: 4px 12px 4px 24px; white-space: nowrap; background: #efe3cf; color: #141b12; font-family: 'Zilla Slab', Georgia, serif; font-size: 1.0625rem; font-weight: 600; font-variant-numeric: tabular-nums lining-nums; clip-path: polygon(12px 0, 100% 0, 100% 100%, 12px 100%, 0 50%); } .ds-etiqueta::before { content: ''; position: absolute; left: 10px; top: 50%; width: 6px; height: 6px; margin-top: -3px; border-radius: 50%; background: #202b1d; } .ds-esgotado { text-decoration: line-through; text-decoration-thickness: 2px; opacity: 0.6; }"
+    },
+    {
+      "name": "Arch Photo Frame",
+      "kind": "custom",
+      "refersTo": "arco-moldura",
+      "description": "Logo arch with 1px gold inset line framing a hatched photo placeholder.",
+      "html": "<div class=\"ds-arco-moldura\"><div class=\"ds-foto\"><span class=\"ds-foto-legenda\">Foto: picanha na brasa</span></div></div>",
+      "css": ".ds-arco-moldura { width: 200px; padding: 6px; border-radius: 999px 999px 0 0; box-shadow: inset 0 0 0 1px #c9ab6e; background: #202b1d; } .ds-foto { display: flex; align-items: flex-end; aspect-ratio: 3/4; border-radius: 999px 999px 0 0; overflow: hidden; background-color: #2a3826; background-image: repeating-linear-gradient(135deg, transparent 0 13px, rgb(201 171 110 / 0.09) 13px 14px); } .ds-foto-legenda { margin: 12px; padding: 4px 8px; background: rgb(20 27 18 / 0.9); color: #dcc393; font-family: 'Zilla Slab', Georgia, serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; }"
+    },
+    {
+      "name": "Cut Filter Chip",
+      "kind": "chip",
+      "refersTo": "chip-corte",
+      "description": "Filters the grilled list by cut; selected fills gold.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\" aria-pressed=\"true\">Todos</button><button class=\"ds-chip\" aria-pressed=\"false\">Picanha</button></div>",
+      "css": ".ds-chips { display: flex; gap: 6px; background: #202b1d; padding: 16px; } .ds-chip { min-height: 44px; padding: 0 12px; border: 1px solid rgb(201 171 110 / 0.4); border-radius: 2px; background: transparent; color: #cfc3ab; font-family: 'Zilla Slab', Georgia, serif; font-size: 0.9375rem; font-weight: 600; cursor: pointer; transition: background-color 150ms, border-color 150ms, color 150ms; } .ds-chip:hover { border-color: #c9ab6e; color: #efe3cf; } .ds-chip[aria-pressed='true'] { border-color: #c9ab6e; background: #c9ab6e; color: #141b12; } .ds-chip:focus-visible { outline: 2px solid #dcc393; outline-offset: 3px; }"
+    },
+    {
+      "name": "Paper Field",
+      "kind": "input",
+      "refersTo": "campo",
+      "description": "Cream field on the docket; error shown by a dashed 2px border.",
+      "html": "<div style=\"background:#efe3cf;padding:16px;display:grid;gap:12px\"><input class=\"ds-campo\" placeholder=\"O seu nome\"><input class=\"ds-campo\" aria-invalid=\"true\" placeholder=\"Telemóvel\"></div>",
+      "css": ".ds-campo { display: block; width: 100%; padding: 12px; border: 1px solid rgb(20 27 18 / 0.4); border-radius: 2px; background: #efe3cf; color: #141b12; font-family: Karla, system-ui, sans-serif; font-size: 1.0625rem; transition: border-color 180ms; } .ds-campo::placeholder { color: rgb(55 71 51 / 0.8); } .ds-campo:focus { outline: none; border-color: #141b12; box-shadow: 0 0 0 2px #9c8150; } .ds-campo[aria-invalid='true'] { border: 2px dashed #141b12; }"
+    },
+    {
+      "name": "Comanda (Docket)",
+      "kind": "card",
+      "refersTo": "comanda",
+      "description": "Cream kitchen docket with gold header band and dashed perforated rows.",
+      "html": "<div class=\"ds-comanda\"><div class=\"ds-comanda-topo\"></div><div class=\"ds-comanda-corpo\"><p class=\"ds-passo\">Passo 5 de 5 · Confirmar</p><h3 class=\"ds-comanda-h\">Confira e envie</h3><dl class=\"ds-linhas\"><div><dt>Quando</dt><dd>Sáb 12 · 20:00</dd></div><div><dt>Mesa</dt><dd>Quintal · 4 pessoas</dd></div></dl></div></div>",
+      "css": ".ds-comanda { max-width: 420px; background: #efe3cf; color: #141b12; } .ds-comanda-topo { height: 8px; background: #c9ab6e; border-bottom: 1px dashed rgb(20 27 18 / 0.4); } .ds-comanda-corpo { padding: 20px 32px 32px; } .ds-passo { margin: 0; text-align: right; font-family: 'Zilla Slab', Georgia, serif; font-size: 0.9375rem; font-weight: 600; color: #2a3826; font-variant-numeric: tabular-nums; } .ds-comanda-h { margin: 16px 0; font-family: Ultra, Georgia, serif; font-size: 1.625rem; line-height: 1; text-transform: uppercase; font-weight: 400; } .ds-linhas { margin: 0; border-top: 1px dashed rgb(20 27 18 / 0.3); border-bottom: 1px dashed rgb(20 27 18 / 0.3); } .ds-linhas > div { display: flex; gap: 16px; padding: 10px 0; border-top: 1px dashed rgb(20 27 18 / 0.3); } .ds-linhas > div:first-child { border-top: 0; } .ds-linhas dt { font-family: 'Zilla Slab', Georgia, serif; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #2a3826; } .ds-linhas dd { margin: 0; font-family: 'Zilla Slab', Georgia, serif; font-weight: 600; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Event Ticket",
+      "kind": "card",
+      "refersTo": "event-ticket",
+      "description": "Ticket strip: date stub behind a dashed gold perforation with punched notches.",
+      "html": "<div class=\"ds-chao\"><div class=\"ds-bilhete\"><p class=\"ds-canhoto\"><span class=\"ds-mes\">Out</span><span class=\"ds-dia\">03</span><span class=\"ds-sem\">sábado</span><i class=\"ds-furo ds-f1\"></i><i class=\"ds-furo ds-f2\"></i></p><div class=\"ds-info\"><h3>Sábado de Semba</h3><p>Música ao vivo · <span>20:00</span></p></div></div></div>",
+      "css": ".ds-chao { background: #141b12; padding: 24px; } .ds-bilhete { display: grid; grid-template-columns: 7rem 1fr; border: 1px solid rgb(201 171 110 / 0.5); background: #202b1d; } .ds-canhoto { position: relative; margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px 8px; border-right: 1px dashed rgb(201 171 110 / 0.6); } .ds-mes { font-family: 'Zilla Slab', Georgia, serif; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #c9ab6e; } .ds-dia { font-family: Ultra, Georgia, serif; font-size: 3.5rem; line-height: 1; color: #efe3cf; font-variant-numeric: tabular-nums; } .ds-sem { font-family: 'Zilla Slab', Georgia, serif; font-size: 0.875rem; font-weight: 600; color: #cfc3ab; } .ds-furo { position: absolute; right: -8px; width: 16px; height: 16px; border-radius: 50%; background: #141b12; } .ds-f1 { top: -8px; } .ds-f2 { bottom: -8px; } .ds-info { padding: 20px 24px; } .ds-info h3 { margin: 0; font-family: Ultra, Georgia, serif; font-weight: 400; font-size: 1.75rem; line-height: 1.1; text-transform: uppercase; color: #efe3cf; } .ds-info p { margin: 4px 0 0; font-family: 'Zilla Slab', Georgia, serif; font-weight: 600; font-size: 0.9375rem; color: #c9ab6e; } .ds-info span { font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Category Tabs",
+      "kind": "nav",
+      "refersTo": "category-tabs",
+      "description": "Sticky slab tabs; active tab pale gold with 2px gold underline.",
+      "html": "<nav class=\"ds-tabs\"><a href=\"#\" aria-current=\"true\">Entradas</a><a href=\"#\">Pratos da Terra</a><a href=\"#\">Grelhados</a></nav>",
+      "css": ".ds-tabs { display: flex; gap: 4px; padding: 0 8px; background: rgb(26 35 24 / 0.95); border-top: 1px solid rgb(201 171 110 / 0.3); border-bottom: 1px solid rgb(201 171 110 / 0.3); } .ds-tabs a { position: relative; display: flex; align-items: center; min-height: 48px; padding: 0 12px; font-family: 'Zilla Slab', Georgia, serif; font-size: 1rem; font-weight: 600; color: #cfc3ab; text-decoration: none; transition: color 150ms; } .ds-tabs a:hover { color: #efe3cf; } .ds-tabs a[aria-current='true'] { color: #dcc393; } .ds-tabs a[aria-current='true']::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 0; height: 2px; background: #c9ab6e; } .ds-tabs a:focus-visible { outline: 2px solid #dcc393; outline-offset: -2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A Carta de Cortes",
+    "overview": "The site reads as a farm butcher's counter lit by a grill: the ox divided into cuts is the navigation for the grilled dishes, every price hangs on a cream butcher's tag tied with gold string, and the pre-order is the kitchen docket (comanda) that reaches the cooks before the guest arrives. Every colour comes from the logo: the deep bush-green ground, the cream lettering, the gold arch and rules, the field green inside the arch.\n\nThe surface is dark and flat, like a painted wooden sign. Gold appears only as one fine line: rules, arches, the ox outline, card borders. Cream is ink on the dark ground and becomes paper where the guest has to write or read a price: the tags, the docket, the form fields. Depth comes only from flat planes overlapping (a tag laid over an arch, a docket on the ground), never from shadows. A faint paper grain (7% opacity, overlay) covers everything.\n\nDensity is menu-like: long ruled lists, tabular prices, sticky category tabs. Display type is heavy wood-type, set loud and in uppercase; everything practical is set in a slab or a plain sans.",
+    "keyCharacteristics": [
+      "Dark bush-green ground in three tonal steps that alternate by section; no light theme.",
+      "Gold used only as a single hairline (1px) or as the fill of a primary action or selected state.",
+      "Cream paper objects (tag, docket, field) carry prices and input.",
+      "Logo arch (full-round top, square base) with a 1px gold border and 6px inset frames photographs.",
+      "Flat overlap for depth; no drop shadows.",
+      "Tabular lining numerals on every price, time and date."
+    ],
+    "rules": [
+      { "name": "The Logo Palette Rule", "body": "Use only the logo-derived tokens. No new hues; tints come from opacity on existing tokens (`ouro/30`, `mato-950/40`).", "section": "colors" },
+      { "name": "The Field Green Is A Signal Rule", "body": "Field green means \"open\", \"added\" or \"done\". If it is not a live state or a tag, it is not green.", "section": "colors" },
+      { "name": "The Wood-Type Is For Headings Rule", "body": "Ultra is only for uppercase headings and the ticket day number. Never use it for body text, buttons or prices.", "section": "typography" },
+      { "name": "The Tabular Numbers Rule", "body": "Every price, time, date, quantity and phone number uses tabular lining numerals.", "section": "typography" },
+      { "name": "The Flat Overlap Rule", "body": "To lift something, lay a flat plane over another plane in a different tone. Never add a drop shadow, glow or blur.", "section": "elevation" },
+      { "name": "The Single Hairline Rule", "body": "Ornamental gold lines are 1px: rules, arch frames, borders, the string on the tag, ticket perforations. Only state markers can be heavier (the 2px active-tab underline, the 2px focus outline).", "section": "elevation" }
+    ],
+    "dos": [
+      "Do draw every ornamental line in gold at 1px, varying opacity (30–70%) instead of weight.",
+      "Do put every price on a cream butcher tag with a hole and a gold string, set in tabular slab numerals.",
+      "Do frame photographs in the logo arch: a 1px gold inset line and 6px of padding.",
+      "Do create depth by overlapping flat planes: tilt a tag across an arch, or set a cream docket on the green ground.",
+      "Do use dashed perforations for anything torn off or itemised: ticket stubs, docket rows.",
+      "Do alternate section grounds between mato, mato-900 and mato-950, separated by a gold rule at 30%.",
+      "Do keep field green for open, added and done states only."
+    ],
+    "donts": [
+      "Don't add drop shadows, glows or blurred elevation anywhere.",
+      "Don't introduce hues outside the logo palette, including a red for errors. Use a dashed 2px border and a message instead.",
+      "Don't set body text, buttons or prices in Ultra.",
+      "Don't round corners beyond 2px, except for the arch and the punched holes.",
+      "Don't thicken ornamental gold lines. 2px is reserved for the active-tab underline and focus."
+    ]
+  }
+}

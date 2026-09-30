@@ -1,0 +1,4 @@
+{
+  "prompt": "Origin: user-supplied brand logo (public/logo-source.jpg, 225x225), cropped to content, 4x LANCZOS upscale + unsharp mask, background keyed to alpha by PIL. Replace with a high-res/vector original when available.\n",
+  "createdAt": "2026-09-30T02:19:54.114Z"
+}

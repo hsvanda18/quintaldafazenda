@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --grao: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .94 0 0 0 0 .89 0 0 0 0 .81 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E");
+    --topo: 4.25rem; /* altura da barra fixa */
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--topo);
+    -webkit-text-size-adjust: 100%;
+    scrollbar-color: theme('colors.ouro.escuro') theme('colors.mato.950');
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; }
+  }
+
+  body {
+    @apply bg-mato font-corpo text-creme antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    caret-color: theme('colors.ouro.DEFAULT');
+  }
+
+  /* grão de papel muito subtil por cima de tudo */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 60;
+    background-image: var(--grao);
+    opacity: 0.07;
+    mix-blend-mode: overlay;
+  }
+
+  ::selection { background: theme('colors.ouro.DEFAULT'); color: theme('colors.mato.950'); }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.ouro.claro');
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1, h2, h3 { text-wrap: balance; }
+
+  a { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+
+  .num { font-variant-numeric: tabular-nums lining-nums; }
+}
+
+@layer components {
+  /* Régua dourada com losango ao centro, como as linhas do logótipo */
+  .regua {
+    @apply flex items-center gap-3 text-ouro;
+  }
+  .regua::before, .regua::after {
+    content: '';
+    height: 1px;
+    flex: 1;
+    background: currentColor;
+    opacity: 0.7;
+  }
+
+  .titulo-cartaz {
+    @apply font-cartaz uppercase leading-[0.95] text-creme;
+    letter-spacing: 0.01em;
+  }
+
+  .rotulo {
+    @apply font-slab text-[0.8125rem] font-semibold uppercase tracking-[0.14em];
+  }
+
+  /* Botões */
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xs px-5 font-slab text-[1.0625rem] font-semibold transition-colors duration-150;
+  }
+  .btn-ouro {
+    @apply btn bg-ouro text-mato-950 hover:bg-ouro-claro active:bg-ouro-escuro;
+  }
+  .btn-linha {
+    @apply btn border border-ouro/70 text-creme hover:border-ouro hover:bg-ouro/10;
+  }
+  .btn-creme {
+    @apply btn bg-mato-950 text-creme hover:bg-mato-700;
+  }
+  .btn:disabled { @apply cursor-not-allowed opacity-50; }
+
+  /* Etiqueta de talho: cartão creme com ponta e furo para o cordel */
+  .etiqueta {
+    @apply num relative inline-flex min-h-[34px] items-center whitespace-nowrap bg-creme py-1 pl-6 pr-3 font-slab text-[1.0625rem] font-semibold text-mato-950;
+    clip-path: polygon(12px 0, 100% 0, 100% 100%, 12px 100%, 0 50%);
+  }
+  .etiqueta::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    margin-top: -3px;
+    border-radius: 50%;
+    background: theme('colors.mato.DEFAULT');
+  }
+
+  /* cordel: fio dourado a sair do furo da etiqueta */
+  .cordel { @apply relative; }
+  .cordel::before {
+    content: '';
+    position: absolute;
+    right: calc(100% - 13px);
+    top: 50%;
+    width: 22px;
+    height: 1px;
+    background: theme('colors.ouro.DEFAULT');
+    transform: rotate(-24deg);
+    transform-origin: right center;
+  }
+
+  /* Placeholder de foto com fundo da marca */
+  .foto {
+    @apply relative flex items-end overflow-hidden bg-mato-700;
+    background-image:
+      repeating-linear-gradient(135deg, transparent 0 13px, rgb(201 171 110 / 0.09) 13px 14px);
+  }
+  .foto-legenda {
+    @apply m-3 bg-mato-950/90 px-2 py-1 font-slab text-[0.75rem] font-semibold uppercase tracking-[0.12em] text-ouro-claro;
+  }
+
+  /* Arco do logótipo: fio duplo dourado */
+  .arco {
+    border-radius: 999px 999px 0 0;
+  }
+  .arco-moldura {
+    @apply relative p-[6px] arco;
+    box-shadow: inset 0 0 0 1px theme('colors.ouro.DEFAULT');
+  }
+  .arco-moldura > * { @apply arco; }
+
+  .campo {
+    @apply block w-full rounded-xs border border-mato-950/40 bg-creme px-3 py-3 text-[1.0625rem] text-mato-950 placeholder:text-mato-600/80 transition-colors;
+  }
+  .campo:focus { @apply border-mato-950 outline-none; box-shadow: 0 0 0 2px theme('colors.ouro.escuro'); }
+  .campo[aria-invalid='true'] { border-width: 2px; border-color: theme('colors.mato.950'); border-style: dashed; }
+}
